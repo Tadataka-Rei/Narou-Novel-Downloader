@@ -63,8 +63,9 @@ python main.py
 
 The Narou Downloader window will open with the following interface:
 
-<img width="894" height="627" alt="image" src="https://github.com/user-attachments/assets/beb77568-4c0d-4eda-a2e1-8098fada4f18" />
-*Application main window with all input fields and controls*
+<p align="center"><img width="894" height="627" alt="image" src="https://github.com/user-attachments/assets/beb77568-4c0d-4eda-a2e1-8098fada4f18" />
+
+*Application main window with all input fields and controls*</p>
 
 ### Field Descriptions
 
@@ -76,8 +77,9 @@ The Narou Downloader window will open with the following interface:
      - Chapter: `https://ncode.syosetu.com/n12345/1/`
    - **Note:** You must provide a valid Narou URL to proceed
 
-<img width="680" height="107" alt="image" src="https://github.com/user-attachments/assets/3b1ca8a8-a5c0-4a31-b9b2-d4e67e60353a" />
-*Enter the novel or chapter URL here*
+<p align="center"><img width="680" height="107" alt="image" src="https://github.com/user-attachments/assets/3b1ca8a8-a5c0-4a31-b9b2-d4e67e60353a" />
+
+*Enter the novel or chapter URL here*</p>
 
 ---
 
@@ -103,8 +105,9 @@ All settings are optional and have sensible defaults.
      - `10+ seconds` to be extra respectful to the server
    - **Example:** Enter `3.0` to wait 3 seconds between chapters
 
-<img width="269" height="32" alt="image" src="https://github.com/user-attachments/assets/b3cf7006-67c6-47a9-87cf-39f95ee744e0" />
-*Configure delay between chapter downloads*
+<p align="center"><img width="269" height="32" alt="image" src="https://github.com/user-attachments/assets/b3cf7006-67c6-47a9-87cf-39f95ee744e0" />
+
+  *Configure delay between chapter downloads*</p>
 
 ---
 
@@ -152,14 +155,15 @@ All settings are optional and have sensible defaults.
      - `{base}/{furigana}` → Result: `漢字/かんじ`
    - **Note:** Only applies if "Enable ruby replacement" is checked
 
-<img width="655" height="42" alt="image" src="https://github.com/user-attachments/assets/99031464-f9ec-414c-9ec6-af1adcdd2f19" />
-*Configure how furigana will appear in downloaded text*
+<p align="center"><img width="655" height="42" alt="image" src="https://github.com/user-attachments/assets/99031464-f9ec-414c-9ec6-af1adcdd2f19" />
+
+*Configure how furigana will appear in downloaded text*</p>
 
 ---
 
 ### Download Controls
 
-<img width="466" height="181" alt="image" src="https://github.com/user-attachments/assets/2b5c074c-0cf5-42f0-b1ed-453587d9d6ca" />
+<p align="center"><img width="466" height="181" alt="image" src="https://github.com/user-attachments/assets/2b5c074c-0cf5-42f0-b1ed-453587d9d6ca" /></p>
 
 - **Start Download Button:** Begins the download process with your current settings
 - **Progress Bar:** Shows download progress (0-100%)
