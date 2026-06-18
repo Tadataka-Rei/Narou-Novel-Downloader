@@ -63,7 +63,7 @@ python main.py
 
 The Narou Downloader window will open with the following interface:
 
-![Application Interface](docs/images/app-interface-placeholder.png)
+<img width="894" height="627" alt="image" src="https://github.com/user-attachments/assets/beb77568-4c0d-4eda-a2e1-8098fada4f18" />
 *Application main window with all input fields and controls*
 
 ### Field Descriptions
@@ -76,7 +76,7 @@ The Narou Downloader window will open with the following interface:
      - Chapter: `https://ncode.syosetu.com/n12345/1/`
    - **Note:** You must provide a valid Narou URL to proceed
 
-![URL Input Field](docs/images/url-field-placeholder.png)
+<img width="680" height="107" alt="image" src="https://github.com/user-attachments/assets/3b1ca8a8-a5c0-4a31-b9b2-d4e67e60353a" />
 *Enter the novel or chapter URL here*
 
 ---
@@ -86,9 +86,6 @@ The Narou Downloader window will open with the following interface:
    - **How to select:** Click the "Choose Output Folder" button to open a folder browser
    - **Default:** No folder selected until you choose one
    - **Note:** Downloaded chapters will be saved as individual files in this folder
-
-![Folder Selection](docs/images/folder-selection-placeholder.png)
-*Click "Choose Output Folder" to select your download destination*
 
 ---
 
@@ -106,7 +103,7 @@ All settings are optional and have sensible defaults.
      - `10+ seconds` to be extra respectful to the server
    - **Example:** Enter `3.0` to wait 3 seconds between chapters
 
-![Sleep Seconds Setting](docs/images/sleep-seconds-placeholder.png)
+<img width="269" height="32" alt="image" src="https://github.com/user-attachments/assets/b3cf7006-67c6-47a9-87cf-39f95ee744e0" />
 *Configure delay between chapter downloads*
 
 ---
@@ -133,9 +130,6 @@ All settings are optional and have sensible defaults.
    - **Note:** This only applies when downloading a full novel. Single chapter downloads ignore this setting.
    - **Use case:** Resume downloads or skip already-downloaded chapters
 
-![Chapter Range Settings](docs/images/chapter-range-placeholder.png)
-*Set where to start and how many chapters to download*
-
 ---
 
 #### **Enable ruby replacement** (Default: ✓ Enabled)
@@ -158,21 +152,18 @@ All settings are optional and have sensible defaults.
      - `{base}/{furigana}` → Result: `漢字/かんじ`
    - **Note:** Only applies if "Enable ruby replacement" is checked
 
-![Ruby Settings](docs/images/ruby-settings-placeholder.png)
+<img width="655" height="42" alt="image" src="https://github.com/user-attachments/assets/99031464-f9ec-414c-9ec6-af1adcdd2f19" />
 *Configure how furigana will appear in downloaded text*
 
 ---
 
 ### Download Controls
 
-![Download Button](docs/images/download-button-placeholder.png)
+<img width="466" height="181" alt="image" src="https://github.com/user-attachments/assets/2b5c074c-0cf5-42f0-b1ed-453587d9d6ca" />
 
 - **Start Download Button:** Begins the download process with your current settings
 - **Progress Bar:** Shows download progress (0-100%)
 - **Log Output:** Displays real-time download activity and any messages/errors
-
-![Progress and Logs](docs/images/progress-logs-placeholder.png)
-*Monitor download progress and view activity logs*
 
 ---
 
@@ -180,7 +171,7 @@ All settings are optional and have sensible defaults.
 
 ### Example 1: Download an entire novel
 
-1. Find a novel on Narou, e.g., `https://ncode.syosetu.com/n12345/`
+1. Find a novel on Narou, e.g., `https://ncode.syosetu.com/???/`
 2. Paste the URL in the **Novel or Chapter URL** field
 3. Click **Choose Output Folder** and select where to save
 4. Leave all settings at defaults (or adjust as needed)
