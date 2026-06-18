@@ -31,6 +31,7 @@ class NovelDownloaderApp:
 
         self.sleep_seconds_var = tk.DoubleVar(value=5.0)
         self.max_chapters_var = tk.IntVar(value=0)
+        self.start_from_var = tk.StringVar(value="1")
         self.ruby_enable_var = tk.BooleanVar(value=True)
         self.ruby_format_var = tk.StringVar(value="{base}[{furigana}]")
 
@@ -43,6 +44,10 @@ class NovelDownloaderApp:
         tk.Entry(settings_frame, textvariable=self.max_chapters_var, width=10).grid(row=row, column=1, sticky="w", padx=5, pady=3)
         row += 1
 
+        tk.Label(settings_frame, text="Start from chapter:").grid(row=row, column=0, sticky="w", padx=5, pady=3)
+        tk.Entry(settings_frame, textvariable=self.start_from_var, width=10).grid(row=row, column=1, sticky="w", padx=5, pady=3)
+        row += 1
+
         tk.Checkbutton(settings_frame, text="Enable ruby replacement", variable=self.ruby_enable_var).grid(
             row=row, column=0, columnspan=2, sticky="w", padx=5, pady=3
         )
@@ -52,6 +57,7 @@ class NovelDownloaderApp:
         tk.Entry(settings_frame, textvariable=self.ruby_format_var).grid(row=row, column=1, sticky="we", padx=5, pady=3)
         settings_frame.grid_columnconfigure(1, weight=1)
         row += 1
+
 
         ttk.Separator(root).pack(fill="x", padx=10, pady=5)
 
@@ -76,12 +82,19 @@ class NovelDownloaderApp:
         self.log.see(tk.END)
 
     def _current_settings(self) -> DownloaderSettings:
+        raw_start = str(self.start_from_var.get()).strip()
+        start_from_chapter = int(raw_start) if raw_start else 1
+        if start_from_chapter < 1:
+            start_from_chapter = 1
+
         return DownloaderSettings(
             sleep_seconds=float(self.sleep_seconds_var.get()),
             max_chapters_scan=int(self.max_chapters_var.get()),
             enable_ruby_replacement=bool(self.ruby_enable_var.get()),
             replacement_format=str(self.ruby_format_var.get()),
+            start_from_chapter=start_from_chapter,
         )
+
 
     def start_download(self):
         if not self.output_folder:

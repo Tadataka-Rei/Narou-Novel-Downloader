@@ -57,10 +57,15 @@ class Downloader:
         if log_callback:
             log_callback(f"Found {total} chapters.")
 
-        for chap in range(1, total + 1):
+        start_from = self.settings.start_from_chapter or 1
+        if start_from < 1:
+            start_from = 1
+
+        for chap in range(start_from, total + 1):
             chap_url = f"{url}{chap}/"
             if log_callback:
                 log_callback(f"Downloading {chap_url}")
+
 
             html = self.client.get_text(chap_url)
             title, content = self.parser.extract_title_and_content(html)

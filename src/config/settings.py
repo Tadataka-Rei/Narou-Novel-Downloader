@@ -18,3 +18,9 @@ class DownloaderSettings:
     enable_ruby_replacement: bool = True
     replacement_format: str = "{base}[{furigana}]"
 
+    # When downloading a novel (index page), start from this chapter number.
+    # 1 means "start from the beginning".
+    # Note: For direct chapter URLs, this setting is ignored.
+    start_from_chapter: int = 1
+
+
