@@ -6,7 +6,7 @@ import time
 from src.config.settings import DownloaderSettings
 from src.downloader.html_parser import HtmlParser
 from src.downloader.narou_client import NarouClient
-from src.utils.fs import save_chapter_txt
+from src.utils.fs import save_chapter  # Updated import
 
 
 class Downloader:
@@ -33,7 +33,8 @@ class Downloader:
 
             html = self.client.get_text(url)
             title, content = self.parser.extract_title_and_content(html)
-            save_chapter_txt(self.output_folder, chap, title, content)
+            # Pass file_format from settings
+            save_chapter(self.output_folder, chap, title, content, self.settings.file_format)
 
             if progress_callback:
                 progress_callback(max_value=1, value=1)
@@ -66,10 +67,10 @@ class Downloader:
             if log_callback:
                 log_callback(f"Downloading {chap_url}")
 
-
             html = self.client.get_text(chap_url)
             title, content = self.parser.extract_title_and_content(html)
-            save_chapter_txt(self.output_folder, chap, title, content)
+            # Pass file_format from settings
+            save_chapter(self.output_folder, chap, title, content, self.settings.file_format)
 
             if progress_callback:
                 progress_callback(max_value=total, value=chap)
@@ -80,4 +81,3 @@ class Downloader:
 
         if log_callback:
             log_callback("Download complete.")
-

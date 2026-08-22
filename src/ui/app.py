@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import threading
-
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
@@ -13,7 +12,7 @@ class NovelDownloaderApp:
     def __init__(self, root: tk.Tk):
         self.root = root
         self.root.title("Narou Downloader")
-        self.root.geometry("900x600")
+        self.root.geometry("900x650")
 
         tk.Label(root, text="Novel or Chapter URL").pack(anchor="w", padx=10, pady=(10, 0))
 
@@ -32,6 +31,7 @@ class NovelDownloaderApp:
         self.sleep_seconds_var = tk.DoubleVar(value=5.0)
         self.max_chapters_var = tk.IntVar(value=0)
         self.start_from_var = tk.StringVar(value="1")
+        self.file_format_var = tk.StringVar(value="txt")
         self.ruby_enable_var = tk.BooleanVar(value=True)
         self.ruby_format_var = tk.StringVar(value="{base}[{furigana}]")
 
@@ -48,6 +48,18 @@ class NovelDownloaderApp:
         tk.Entry(settings_frame, textvariable=self.start_from_var, width=10).grid(row=row, column=1, sticky="w", padx=5, pady=3)
         row += 1
 
+        # File format selector dropdown
+        tk.Label(settings_frame, text="File format:").grid(row=row, column=0, sticky="w", padx=5, pady=3)
+        format_dropdown = ttk.Combobox(
+            settings_frame,
+            textvariable=self.file_format_var,
+            values=["txt", "docx", "doc"],
+            state="readonly",
+            width=8,
+        )
+        format_dropdown.grid(row=row, column=1, sticky="w", padx=5, pady=3)
+        row += 1
+
         tk.Checkbutton(settings_frame, text="Enable ruby replacement", variable=self.ruby_enable_var).grid(
             row=row, column=0, columnspan=2, sticky="w", padx=5, pady=3
         )
@@ -57,7 +69,6 @@ class NovelDownloaderApp:
         tk.Entry(settings_frame, textvariable=self.ruby_format_var).grid(row=row, column=1, sticky="we", padx=5, pady=3)
         settings_frame.grid_columnconfigure(1, weight=1)
         row += 1
-
 
         ttk.Separator(root).pack(fill="x", padx=10, pady=5)
 
@@ -93,8 +104,8 @@ class NovelDownloaderApp:
             enable_ruby_replacement=bool(self.ruby_enable_var.get()),
             replacement_format=str(self.ruby_format_var.get()),
             start_from_chapter=start_from_chapter,
+            file_format=str(self.file_format_var.get()),
         )
-
 
     def start_download(self):
         if not self.output_folder:
@@ -118,4 +129,3 @@ class NovelDownloaderApp:
             self.write_log(text)
 
         threading.Thread(target=downloader.download, args=(url, _progress, _log), daemon=True).start()
-
