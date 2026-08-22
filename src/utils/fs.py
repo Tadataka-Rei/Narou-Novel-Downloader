@@ -5,7 +5,7 @@ from docx import Document
 
 
 def sanitize_filename(name: str) -> str:
-    # remove invalid filename characters on Windows
+    # remove invalid filename characters on Windows because windows suck
     return "".join(c for c in name if c not in r'<>:"/\\|?*')
 
 

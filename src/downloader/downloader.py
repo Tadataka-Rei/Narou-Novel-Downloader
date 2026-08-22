@@ -6,7 +6,7 @@ import time
 from src.config.settings import DownloaderSettings
 from src.downloader.html_parser import HtmlParser
 from src.downloader.narou_client import NarouClient
-from src.utils.fs import save_chapter  # Updated import
+from src.utils.fs import save_chapter 
 
 
 class Downloader:
