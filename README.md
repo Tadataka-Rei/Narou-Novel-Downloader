@@ -36,7 +36,7 @@ A Python desktop application for downloading novels from Syosetu (Narou) with cu
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Tadataka-Rei/Narou-Novel-Downloader.git
    cd Narou-Novel-Downloader
    ```
 
