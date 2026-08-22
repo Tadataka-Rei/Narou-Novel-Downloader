@@ -15,4 +15,6 @@ class DownloaderSettings:
 
     start_from_chapter: int = 1
 
+    file_format: str = "txt"
+
 
